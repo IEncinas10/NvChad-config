@@ -35,7 +35,6 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>fm', vim.lsp.buf.format, bufopts)
-  client.server_capabilities.semanticTokensProvider = nil
 end
 
 lspconfig.verible.setup {
@@ -69,4 +68,4 @@ lspconfig.clangd.setup {
 
 lspconfig.digestif.setup{}
 -- 
- lspconfig.pyright.setup {}
+lspconfig.pyright.setup {}
