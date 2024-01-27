@@ -34,14 +34,14 @@ local plugins = {
     lazy = false,
     config = function()
       local opts = {
-          sync_root_with_cwd = true,
-          respect_buf_cwd = true,
-          update_focused_file = {
-            enable = true,
-            update_root = true
-          },
+        sync_root_with_cwd = true,
+        respect_buf_cwd = true,
+        update_focused_file = {
+          enable = true,
+          update_root = true
+        },
       };
-      require("project_nvim").setup{opts}
+      require("project_nvim").setup { opts }
     end
   },
 
@@ -110,7 +110,7 @@ local plugins = {
 
   {
     "jbyuki/venn.nvim",
-    lazy = false,
+    keys = { " v", "n"},
   },
 
   -- To make a plugin not be loaded
