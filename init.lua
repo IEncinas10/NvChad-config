@@ -5,3 +5,7 @@
    pattern = "*",
    command = "tabdo wincmd =",
  })
+
+ -- Popup. Main example: autocomplete
+ vim.o.pumheight = 8
+ vim.o.pumblend = 20

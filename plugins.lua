@@ -110,7 +110,7 @@ local plugins = {
 
   {
     "jbyuki/venn.nvim",
-    keys = { " v", "n"},
+    keys = { " v", "n" },
   },
 
   -- To make a plugin not be loaded
