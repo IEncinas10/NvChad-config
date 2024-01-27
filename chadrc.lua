@@ -75,6 +75,7 @@ vim.cmd('set relativenumber')
 -------------------------------------
 ----------- Ascii art ---------------
 -- venn.nvim: enable or disable keymappings
+-- https://github.com/jbyuki/venn.nvim?tab=readme-ov-file#using-toggle-command
 function _G.Toggle_venn()
   local venn_enabled = vim.inspect(vim.b.venn_enabled)
   if venn_enabled == "nil" then
