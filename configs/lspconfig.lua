@@ -34,7 +34,11 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ra', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  vim.keymap.set('n', '<space>fm', vim.lsp.buf.format, bufopts)
+  if(vim.version().minor >= 10) then
+    vim.keymap.set('n', '<space>fm', vim.lsp.buf.format, bufopts)
+  else
+    vim.keymap.set('n', '<space>fm', vim.lsp.buf.formatting, bufopts)
+  end
 end
 
 lspconfig.verible.setup {
