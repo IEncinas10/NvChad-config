@@ -56,6 +56,12 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
+      highlight = {
+        enable = true,
+        disable = function(_, bufnr) -- Disable in large buffers
+          return vim.api.nvim_buf_line_count(bufnr) > 4000
+        end,
+      },
       ensure_installed = {
         "bash",
         "bibtex",
