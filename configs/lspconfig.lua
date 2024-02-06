@@ -6,7 +6,7 @@ local lspconfig = require("lspconfig")
 
 -- Mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap=true, silent=true }
+local opts = { noremap = true, silent = true }
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
@@ -20,7 +20,7 @@ local on_attach = function(client, bufnr)
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
-  local bufopts = { noremap=true, silent=true, buffer=bufnr }
+  local bufopts = { noremap = true, silent = true, buffer = bufnr }
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
@@ -34,7 +34,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<space>ra', vim.lsp.buf.rename, bufopts)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-  if(vim.version().minor >= 10) then
+  if (vim.version().minor >= 10) then
     vim.keymap.set('n', '<space>fm', vim.lsp.buf.format, bufopts)
   else
     vim.keymap.set('n', '<space>fm', vim.lsp.buf.formatting, bufopts)
@@ -42,34 +42,34 @@ local on_attach = function(client, bufnr)
 end
 
 lspconfig.verible.setup {
-    on_attach = on_attach,
-    cmd = {
-      "verible-verilog-ls",
-      "--rules_config_search",
-      -- "--rules_config=/home/ier/HARDCODED_VERIBLE_RULES",
-    },
-    root_dir = function() return vim.loop.cwd() end
+  on_attach = on_attach,
+  cmd = {
+    "verible-verilog-ls",
+    "--rules_config_search",
+    -- "--rules_config=/home/ier/HARDCODED_VERIBLE_RULES",
+  },
+  root_dir = function() return vim.loop.cwd() end
 }
 
 lspconfig.clangd.setup {
   on_attach = on_attach,
-  capabilities = require'cmp_nvim_lsp'.default_capabilities(),
+  capabilities = require 'cmp_nvim_lsp'.default_capabilities(),
   cmd = {
-     "clangd",
-     "--background-index",
-     -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
-     -- to add more checks, create .clang-tidy file in the root directory
-     -- and add Checks key, see https://clang.llvm.org/extra/clang-tidy/
-     "--clang-tidy",
-     "--completion-style=detailed",
-     "--fallback-style=LLVM",
-     "--cross-file-rename",
-     "--enable-config",
-     "--header-insertion=never",
+    "clangd",
+    "--background-index",
+    -- by default, clang-tidy use -checks=clang-diagnostic-*,clang-analyzer-*
+    -- to add more checks, create .clang-tidy file in the root directory
+    -- and add Checks key, see https://clang.llvm.org/extra/clang-tidy/
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--fallback-style=LLVM",
+    "--cross-file-rename",
+    "--enable-config",
+    "--header-insertion=never",
   }
 }
 
 
-lspconfig.digestif.setup{}
--- 
+lspconfig.digestif.setup {}
+--
 lspconfig.pyright.setup {}

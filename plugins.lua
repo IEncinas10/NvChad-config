@@ -97,7 +97,7 @@ local plugins = {
         "vimdoc",
         "yaml",
       },
-    },
+    }
   },
 
   {
