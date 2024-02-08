@@ -125,4 +125,16 @@ vim.api.nvim_set_keymap('n', '<A-i>',
   { noremap = true })
 -- INLAY HINTS end
 
+
+-- todo-comments
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next todo comment" })
+
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous todo comment" })
+-- todo-comments
+
+
 return M
