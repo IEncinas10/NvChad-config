@@ -66,6 +66,9 @@ lspconfig.clangd.setup {
     "--cross-file-rename",
     "--enable-config",
     "--header-insertion=never",
+    "--function-arg-placeholders",
+    "--malloc-trim",
+    "--all-scopes-completion",
   }
 }
 
