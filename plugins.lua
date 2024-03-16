@@ -128,6 +128,20 @@ local plugins = {
     "jbyuki/venn.nvim",
     keys = { " v", "n" },
   },
+  {
+    "kdheepak/lazygit.nvim",
+    cmd = {
+      "LazyGit",
+      "LazyGitConfig",
+      "LazyGitCurrentFile",
+      "LazyGitFilter",
+      "LazyGitFilterCurrentFile",
+    },
+      -- optional for floating window border decoration
+      dependencies = {
+          "nvim-lua/plenary.nvim",
+      },
+  },
 
   -- To make a plugin not be loaded
   -- {
