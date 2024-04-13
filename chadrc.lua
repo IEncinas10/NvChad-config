@@ -137,4 +137,13 @@ end, { desc = "Previous todo comment" })
 -- todo-comments
 
 
+-- TODO(iencinas): migrate to NvChad 2.5
+-- https://gist.github.com/siduck/048bed2e7570569e6b327b35d1715404
+
+-- Maybe changes more stuff but more importantly:
+--   stop adding comment markers if new line is added
+--   with "o" instead of hitting enter
+vim.opt.formatoptions:remove { "o" }
+
+
 return M
