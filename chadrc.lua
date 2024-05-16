@@ -107,21 +107,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- INLAY HINTS begin
--- https://vinnymeller.com/posts/neovim_nightly_inlay_hints/
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    -- Check that inlay_hint exists. Will be available in nvim-10
-    if client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
-      vim.lsp.inlay_hint.enable(args.buf, true)
-    end
-  end
-})
+if vim.lsp.inlay_hint then
+  vim.lsp.inlay_hint.enable()
+end
 
 vim.api.nvim_set_keymap('n', '<A-i>',
-  ":lua if vim.lsp.inlay_hint then vim.lsp.inlay_hint.enable(0, not vim.lsp.inlay_hint.is_enabled()) end<CR>",
+  ":lua if vim.lsp.inlay_hint then vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end<CR>",
   { noremap = true })
 -- INLAY HINTS end
 
