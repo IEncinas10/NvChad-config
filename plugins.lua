@@ -137,10 +137,16 @@ local plugins = {
       "LazyGitFilter",
       "LazyGitFilterCurrentFile",
     },
-      -- optional for floating window border decoration
-      dependencies = {
-          "nvim-lua/plenary.nvim",
-      },
+    -- optional for floating window border decoration
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  },
+  {
+    'chomosuke/typst-preview.nvim',
+    lazy = false, -- or ft = 'typst'
+    version = '0.3.*',
+    build = function() require 'typst-preview'.update() end,
   },
 
   -- To make a plugin not be loaded
