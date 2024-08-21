@@ -29,21 +29,6 @@ local plugins = {
     "sindrets/diffview.nvim",
     lazy = false
   },
-  {
-    "ahmedkhalf/project.nvim",
-    lazy = false,
-    config = function()
-      local opts = {
-        sync_root_with_cwd = true,
-        respect_buf_cwd = true,
-        update_focused_file = {
-          enable = true,
-          update_root = true
-        },
-      };
-      require("project_nvim").setup { opts }
-    end
-  },
 
   -- FZF
 
