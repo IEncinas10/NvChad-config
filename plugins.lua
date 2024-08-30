@@ -133,6 +133,11 @@ local plugins = {
     version = '0.3.*',
     build = function() require 'typst-preview'.update() end,
   },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^5', -- Recommended
+    lazy = false,   -- This plugin is already lazy
+  }
 
   -- To make a plugin not be loaded
   -- {
