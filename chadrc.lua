@@ -137,7 +137,8 @@ end, { desc = "Previous todo comment" })
 vim.opt.formatoptions:remove { "o" }
 
 vim.api.nvim_create_autocmd({ 'BufEnter', 'BufWinEnter' },
-  { pattern = {'*typ', '*adoc'}, callback = function() vim.cmd("setlocal spell") end, })
+  { pattern = { '*typ', '*adoc' }, callback = function() vim.cmd("setlocal spell") end, })
+
 -- File line
 vim.keymap.set("n", "<Leader>fl", ":call setreg('+', expand('%:p.') .. ':' .. line('.'))<CR>",
   { desc = "Absolute file path and line" })
