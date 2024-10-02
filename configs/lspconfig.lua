@@ -73,6 +73,10 @@ lspconfig.clangd.setup {
   }
 }
 
+-- Idk how this works, I don't care either
+lspconfig.lua_ls.setup {
+    checkThirdParty = false,
+}
 
 lspconfig.digestif.setup {}
 --
