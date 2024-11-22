@@ -80,7 +80,7 @@ lspconfig.lua_ls.setup {
 
 lspconfig.digestif.setup {}
 --
-lspconfig.pyright.setup {}
+lspconfig.ruff.setup {}
 
 lspconfig.rust_analyzer.setup {
   on_attach = on_attach,
