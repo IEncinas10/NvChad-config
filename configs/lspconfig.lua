@@ -43,6 +43,11 @@ end
 
 lspconfig.verible.setup {
   on_attach = on_attach,
+  on_init = function(client)
+    if client.supports_method('textDocument/publishDiagnostics') then
+      vim.lsp.diagnostic.on_publish_diagnostics = function() end
+    end
+  end,
   cmd = {
     "verible-verilog-ls",
     "--rules_config_search",
