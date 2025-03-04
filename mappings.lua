@@ -92,6 +92,7 @@ M.general = {
     ["<A-l>"] = { ":lua vim.lsp.set_log_level('debug')<CR>", "LSP log debug", opts = { nowait = true } },
     ["<A-m>"] = { ":lua vim.lsp.set_log_level('off')<CR>", "LSP log off", opts = { nowait = true } },
     ["<C-t>"] = { ":TodoTelescope<CR>", "todo-comment telescope menu" },
+    ["<leader>vm"] = { ":marks<CR>", "Open marks" },
   },
 }
 
