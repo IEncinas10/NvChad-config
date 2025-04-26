@@ -145,4 +145,8 @@ vim.keymap.set("n", "<Leader>fl", ":call setreg('+', expand('%:p.') .. ':' .. li
 -- Absolute file path
 vim.keymap.set("n", "<Leader>fp", ":call setreg('+', expand('%:p'))<CR>", { desc = "Absolute file path" })
 
+vim.opt.listchars = {
+  space = '~', tab = '··'
+}
+
 return M
